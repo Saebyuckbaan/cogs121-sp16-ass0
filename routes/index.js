@@ -9,7 +9,7 @@ exports.view = function(req, res) {
     {
     	console.log ( messages );
     	data["data"] = messages;
-    	res.render("index", data);
+    	res.render("index", data); 
     };
     
 }
