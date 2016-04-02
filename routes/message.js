@@ -8,7 +8,7 @@ exports.send = function(req, res) {
     var newMessage = new models.Message({
     	"email": req.body.email,
     	"content": req.body.content,
-    	"date": date
+    	"created": date
     });
 
 	console.log ( newMessage );
