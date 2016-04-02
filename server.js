@@ -6,11 +6,14 @@ var handlebars = require("express3-handlebars");
 var mongoose   = require("mongoose");
 var app        = express();
 
+
+//Router
 var router = {
     index: require("./routes/index"),
     message: require("./routes/message")
 };
 
+//Body Parser for req.body
 var parser = {
     body: require("body-parser")
 };
@@ -25,8 +28,8 @@ var parser = {
 
 // Middleware
 app.set("port", process.env.PORT || 3000);
-app.engine("html", handlebars());
-app.set("view engine", "html");
+app.engine("handlebars", handlebars());
+app.set("view engine", "handlebars");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(parser.body.urlencoded({ extended: false }));
